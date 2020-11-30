@@ -1,0 +1,14 @@
+clc; clear all; close all;
+n=-3:1:3;
+x=[3,-2,0,1,4,5,2];
+y=[0,7,1,-3,4,9,-2];
+w=[-5,4,3,6,-5,0,1];
+y1=x+y;
+y2=x.*w;
+y3=y-w;
+y4=4.5*y;
+figure(1);
+%stem(n,y1);
+plot(n,y1,'o',n,y2,'--',n,y3,n,y4,'^');
+ylabel("Amp"); xlabel("(a)n..");
+title("Sine Signals");

@@ -1,0 +1,27 @@
+# general
+*.vscode
+*.out
+*.exe
+*.pyc
+
+# extras
+Extra
+resources
+*.zip
+*.rar
+
+# matlab
+*.jpg
+*.jpeg
+*.png
+*.tif
+*.mp3
+*.wav
+*.m~
+
+# files
+*.docx
+*.odt*
+
+
+

@@ -1,0 +1,15 @@
+create database employee;
+use employee;
+create table emp(id int, name varchar(20), salary float, dep_name varchar(20));
+insert into emp values(1,'abc',100000,'Sales');
+insert into emp values(2,'def',200000,'Accounts');
+insert into emp values(3,'ghi',250000,'Finanace');
+insert into emp values(4,'jkl',150000,'Finanace');
+insert into emp values(5,'mno',100000,'Sales');
+alter table emp add constraint primary key(id);
+insert into emp(id,name,salary) values(7,'sdgs',100001);
+select id,name,ifnull(dep_name,'N/A') dep_name from emp;
+select distinct dep_name  as 'ddep' from emp;
+delete from emp where name like 'a%';
+select * from emp where salary =(select max(salary) from emp);
+select * from emp limit 2;

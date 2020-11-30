@@ -1,0 +1,22 @@
+1. select e.Fname, e.Minit, e.Lname, e.Bdate, e.Address from employee e inner join department d on e.Dno=d.Dno where d.Dname='Admin';
+2. select sum(salary) SUM, min(Salary) MIN, max(Salary) MAX, avg(Salary) AVG from employee e inner join department d on e.Dno=d.Dno where d.Dname='Research';
+3. select count(*) from employee e inner join department d on e.Dno = d.Dno where d.Dname='Research';
+4. select p.Pname, p.Pno, count(*) Total from project p inner join works_on w on p.Pno=w.Pno group by(w.Pno);
+5. select p.Pname, p.Pno, count(*) Total from project p inner join works_on w on p.Pno=w.Pno  where p.Dno=5 group by(w.Pno);
+6. select p.Pno, p.Dno, e.Lname, e.Address  from(( department d inner join project p on p.Dno=d.Dno) inner join employee e on d.Mgr_ssn=e.ssn) where p.Plocation='Houston';
+7. select e.Fname, e.Lname, w.Pno, p.Dno from(( works_on w inner join project p on w.Pno=p.Pno) inner join employee e on w.essn=e.Ssn) order by p.Dno,e.Fname asc,e.Lname;  
+8. select * from employee where Super_ssn is NULL;
+9. select t.Fname from employee t, employee t1 where t.Super_ssn=t1.Ssn and t1.Super_ssn='987654321';
+10. select d.Dname,e.Fname,e.Salary from department d inner join employee e on d.Mgr_ssn=e.Ssn;
+11. select e.Fname employee_name,s.Fname superviser_name,e.salary salary from employee e,employee s where e.Super_ssn = s.Ssn and e.Dno=(select Dno from department where Dname='Research');
+12. select p.Pname,d.Dname,count(w.essn) no_of_emp,sum(w.Hours) from(( project p inner join works_on w on p.Pno=w.Pno) inner join department d on p.Dno=d.Dno) group by p.Pno;
+13. select p.Pname,d.Dname,count(w.essn) no_of_emp,sum(w.Hours) from(( project p inner join works_on w on p.Pno=w.Pno) inner join department d on p.Dno=d.Dno)  group by p.Pno having count(w.essn)>1;
+14. select e.Fname from(( works_on w join project p on w.Pno=p.Pno) right join employee e on e.Ssn=w.essn) where p.Dno=5 group by e.Ssn having count(*)=(select count(*) from project p where p.Dno=5); 
+15. select e.Fname,e.Minit,e.Lname from((works_on w inner join project p on p.Pno=w.Pno) inner join employee e on e.Ssn=w.essn) where p.Dno=5 and w.Hours>10 and p.Pname='productx';
+16. select Fname,Minit,Lname from employee e inner join dependent d on e.Ssn=d.Essn where e.Fname=d.Dep_name;
+17. select Fname,Minit,Lname from employee where Super_ssn=(select Ssn from employee where Fname='Franklin' and Lname='Wong');
+18. select p.Pname, sum(w.Hours) total from works_on w inner join project p on  w.Pno=p.Pno group by p.Pno;
+19. select avg(salary) from employee where Sex='F';
+
+
+

@@ -1,0 +1,10 @@
+clc; clear all; close all;
+n=input("Enter length of ip sequence");
+t=0:n;
+a=input("Enter the a value");
+y=exp(a*t);
+figure(4);
+stem(t,y);
+xlabel("x-axis");
+ylabel("y-axis");
+title("Unit Exponential");
