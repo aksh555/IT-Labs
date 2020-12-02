@@ -6,9 +6,12 @@
 
 # extras
 Extra
+*tt*
+*trial*
 resources
 *.zip
 *.rar
+*Parallel-K-Means*
 
 # matlab
 *.jpg
