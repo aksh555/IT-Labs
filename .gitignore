@@ -3,9 +3,11 @@
 *.out
 *.exe
 *.pyc
+*.ipynb_checkpoints
 
 # extras
 Extra
+misc
 *tt*
 *trial*
 resources
